@@ -1,0 +1,54 @@
+Quais as diferenças entre os barramentos de dados e de endereços?
+  Barramento é caminho feito entre duas unidades para receber ou transmitir 
+ informação e endereços representa exatamente a posição na memória para que se possa ler algum valor.
+
+Quais são as diferenças entre as memórias RAM e ROM?
+  A memoria Ram ela é volatil e quando acaba a energia ela perde a informação, já a 
+  memoria ROM quando acaba a energia ela guarda a informação, podendo ser reutilizada.
+ 
+Considere o código abaixo:
+
+#include <stdio.h>
+int main(void)
+{
+	int i;
+	printf("Insira um número inteiro: ");
+	scanf("%d", &i);
+	if(i%2)
+		printf("%d eh impar.\n");
+	else
+		printf("%d eh par.\n");
+	return 0;
+}
+Para este código, responda: 
+(a) A variável i é armazenada na memória RAM ou ROM? Por quê? 
+(b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
+  Ela é armazenada na memoria RAM, pois se o programa for deslgado perde a informação de i. É compilado 
+  na memoria ROM, pois você porerá reutilizar o código.
+
+Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
+  Arquitetura tipo Harvard: Caminhos de dados e de instrução distintos, dessa forma, seus componentes 
+  internos também estão dispostos em lugares distintos, o que a torna mais rápida porem mais complexa.
+  Von Neumann: é processada uma única informação por vez, visto que nessa tecnologia, execução e dados
+  percorrem o mesmo barramento, o que torna a arquitetura mais simples porém torna o processo lento em
+  relação à arquitetura Harvard. A principal diferença é que a arquitetura de Harvard separa o armazenamento 
+  e o trafego das instruções da CPU e dos dados em duas unidades distintas de memória, enquanto a
+  Von Neumann utiliza o mesmo espaço de memória para ambos. Considere a variável inteira i, armazenando
+  o valor 0x8051ABCD. 
+
+Se i é armazenada na memória a partir do endereço 0x0200, como ficam este byte e
+os seguintes, considerando que a memória é: (a) Little-endian; (b) Big-endian.
+    (a) Little-endian?
+    R: 	0x200: 0xCD
+      0x202: 0xAB
+      0x204: 0x51
+      0x206: 0x80 
+    (b) Big-endian?
+    R: 	0x200: 0x80
+      0x202: 0x51
+      0x204: 0xAB
+      0x206: 0xCD 
+  
+
+Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+Verificando a flag de Overflow da própria CPU ou fazendo análise de sinal com a flag de negativo.
